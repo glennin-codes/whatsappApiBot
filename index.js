@@ -1,4 +1,5 @@
 const { Client,LocalAuth  } = require('whatsapp-web.js');
+const OpenAI = require('openai');
 
 const qrcode = require('qrcode-terminal');
 // Load the session data if it has been previously saved
@@ -58,21 +59,30 @@ client.on('qr', (qr) => {
     qrcode.generate(qr, {small: true});
 });
 
-//obtaining messages
-client.on('message', async message => {
-    console.log(message.body);
-	if(message.body === 'hi') {
-		message.reply('yes man');
-	}
-});
-// //sending
+// //obtaining messages
 // client.on('message', async message => {
 //     console.log(message.body);
 // 	if(message.body === 'hi') {
-// 		client.sendMessage(message.from, 'yes yooh');
+// 		message.reply('yes man');
 // 	}
 // });
+
 client.on('ready', () => {
     console.log('Client is ready!');
 });
 client.initialize();
+// Listen for incoming messages
+client.on('message', async (message) => {
+  try {
+      // Send the message to the OpenAI API for processing
+      const response = await OpenAI.completions.create({
+          prompt: message.body,
+          model: "text-davinci-002",
+          temperature: 0.5
+      });
+      // Send the response back to the user via WhatsApp
+      client.sendMessage(message.from, response.choices[0].text);
+  } catch (err) {
+      console.log(`Error processing message: ${err}`);
+  }
+});
