@@ -1,14 +1,3 @@
-2023/01/13-12:28:42.754 36b8 Reusing MANIFEST /home/glennin/Desktop/ai/.wwebjs_auth/session-client-one/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2023/01/13-12:28:42.754 36b8 Recovering log #12
-2023/01/13-12:28:42.916 36b8 Reusing old log /home/glennin/Desktop/ai/.wwebjs_auth/session-client-one/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000012.log 
-2023/01/13-12:28:42.917 36b8 Delete type=2 #13
-2023/01/13-12:28:42.917 36b8 Delete type=2 #11
-2023/01/13-12:28:50.257 36b7 Level-0 table #17: started
-2023/01/13-12:28:50.514 36b7 Level-0 table #17: 1372369 bytes OK
-2023/01/13-12:28:50.771 36b7 Delete type=0 #12
-2023/01/13-12:28:53.278 36b6 Compacting 1@1 + 1@2 files
-2023/01/13-12:28:53.920 36b6 Generated table #18@1: 29557 keys, 2085911 bytes
-2023/01/13-12:28:53.920 36b6 Compacted 1@1 + 1@2 files => 2085911 bytes
-2023/01/13-12:28:54.042 36b6 compacted to: files[ 0 0 1 0 0 0 0 ]
-2023/01/13-12:28:54.042 36b6 Delete type=2 #14
-2023/01/13-12:28:54.042 36b6 Delete type=2 #17
+2023/01/13-16:05:58.190 5808 Reusing MANIFEST /home/glennin/Desktop/ai/.wwebjs_auth/session-client-one/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/01/13-16:05:58.195 5808 Recovering log #239
+2023/01/13-16:05:58.535 5808 Reusing old log /home/glennin/Desktop/ai/.wwebjs_auth/session-client-one/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000239.log 

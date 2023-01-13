@@ -1,5 +1,5 @@
 const { Client,LocalAuth  } = require('whatsapp-web.js');
-const OpenAI = require('openai');
+const { Configuration, OpenAIApi } =require( 'openai');;
 
 const qrcode = require('qrcode-terminal');
 // Load the session data if it has been previously saved
@@ -39,20 +39,11 @@ const client = new Client({
 
 });
 
-// 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
+// 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
 
 
 
-// Use the saved values
 
-// client.on('authenticated', (session) => {
-//     sessionData = session;
-//     fs.writeFile(SESSION_FILE_PATH, JSON.stringify(session), (err) => {
-//         if (err) {
-//             console.error(err);
-//         }
-//     });
-// });
 // const client = new Client();
 client.on('qr', (qr) => {
     // console.log('QR RECEIVED', qr);
@@ -71,18 +62,25 @@ client.on('ready', () => {
     console.log('Client is ready!');
 });
 client.initialize();
-// Listen for incoming messages
-client.on('message', async (message) => {
-  try {
-      // Send the message to the OpenAI API for processing
-      const response = await OpenAI.completions.create({
-          prompt: message.body,
-          model: "text-davinci-002",
-          temperature: 0.5
-      });
-      // Send the response back to the user via WhatsApp
-      client.sendMessage(message.from, response.choices[0].text);
-  } catch (err) {
-      console.log(`Error processing message: ${err}`);
-  }
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY
 });
+
+const openai = new OpenAIApi(configuration);
+
+client.on('message', async (message) => {
+    
+try {
+const response = await openai.createCompletion({
+  model: "text-davinci-003",
+  prompt: `${message.body}`,
+  max_tokens: 2048,
+  temperature: 0,
+  "n": 1,
+});
+
+//const data = await response.json();
+//response = response.json();
+const d = response.data.choices[0].text;
+
+client.sendMessage(message.from, d.trim() );
