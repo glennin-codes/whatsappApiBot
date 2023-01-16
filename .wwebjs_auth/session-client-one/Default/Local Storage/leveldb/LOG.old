@@ -1,3 +1,12 @@
-2023/01/13-16:06:09.188 590c Reusing MANIFEST /home/glennin/Desktop/ai/.wwebjs_auth/session-client-one/Default/Local Storage/leveldb/MANIFEST-000001
-2023/01/13-16:06:09.209 590c Recovering log #4
-2023/01/13-16:06:09.210 590c Reusing old log /home/glennin/Desktop/ai/.wwebjs_auth/session-client-one/Default/Local Storage/leveldb/000004.log 
+2023/01/16-06:05:55.809 cc4d Reusing MANIFEST /home/glennin/Desktop/ai/.wwebjs_auth/session-client-one/Default/Local Storage/leveldb/MANIFEST-000001
+2023/01/16-06:05:55.811 cc4d Recovering log #4
+2023/01/16-06:05:56.141 cc4d Reusing old log /home/glennin/Desktop/ai/.wwebjs_auth/session-client-one/Default/Local Storage/leveldb/000004.log 
+2023/01/16-06:08:56.238 cd3d Level-0 table #8: started
+2023/01/16-06:08:56.303 cd3d Level-0 table #8: 31381 bytes OK
+2023/01/16-06:08:56.348 cd3d Delete type=0 #4
+2023/01/16-06:11:56.192 cd9f Level-0 table #10: started
+2023/01/16-06:11:56.344 cd9f Level-0 table #10: 41443 bytes OK
+2023/01/16-06:11:56.489 cd9f Delete type=0 #7
+2023/01/16-06:14:56.791 ced3 Level-0 table #12: started
+2023/01/16-06:14:57.343 ced3 Level-0 table #12: 37995 bytes OK
+2023/01/16-06:14:58.114 ced3 Delete type=0 #9

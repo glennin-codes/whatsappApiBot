@@ -1,28 +1,8 @@
 const { Client,LocalAuth  } = require('whatsapp-web.js');
-const { Configuration, OpenAIApi } =require( 'openai');;
-
+const { Configuration, OpenAIApi } =require( 'openai');
+const dotenv =require('dotenv')
 const qrcode = require('qrcode-terminal');
-// Load the session data if it has been previously saved
-const fs = require('fs');
-// Path where the session data will be stored
-// const SESSION_FILE_PATH = './session.json';
-// let sessionData;
-// if(fs.existsSync(SESSION_FILE_PATH)) {
-//     sessionData = require(SESSION_FILE_PATH);
-// }
-// const client = new Client({
-    
-//     puppeteer: {
-// 		args: ['--no-sandbox'],
-// 	},
-//     authStrategy: new LegacySessionAuth({
-//         session: sessionData,
-
-//     })
-    
-// });
-// const { Client, LocalAuth } = require("whatsapp-web.js");
-
+dotenv.config(); 
 console.log("Connection to Whatsapp Web Client");
 
 const client = new Client({
@@ -62,6 +42,7 @@ client.on('ready', () => {
     console.log('Client is ready!');
 });
 client.initialize();
+
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY
 });
@@ -72,15 +53,19 @@ client.on('message', async (message) => {
     
 try {
 const response = await openai.createCompletion({
-  model: "text-davinci-003",
+  model: "text-davinci-002",
   prompt: `${message.body}`,
   max_tokens: 2048,
-  temperature: 0,
+  temperature: 0.5,
   "n": 1,
 });
 
-//const data = await response.json();
-//response = response.json();
+
 const d = response.data.choices[0].text;
 
 client.sendMessage(message.from, d.trim() );
+}
+catch(error){
+  console.error(`error: ${error}`);
+};
+});

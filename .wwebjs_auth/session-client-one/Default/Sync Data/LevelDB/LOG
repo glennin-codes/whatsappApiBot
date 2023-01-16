@@ -1,3 +1,3 @@
-2023/01/13-16:06:20.841 59ad Reusing MANIFEST /home/glennin/Desktop/ai/.wwebjs_auth/session-client-one/Default/Sync Data/LevelDB/MANIFEST-000001
-2023/01/13-16:06:20.842 59ad Recovering log #3
-2023/01/13-16:06:20.842 59ad Reusing old log /home/glennin/Desktop/ai/.wwebjs_auth/session-client-one/Default/Sync Data/LevelDB/000003.log 
+2023/01/16-07:02:16.682 10648 Reusing MANIFEST /home/glennin/Desktop/ai/.wwebjs_auth/session-client-one/Default/Sync Data/LevelDB/MANIFEST-000001
+2023/01/16-07:02:16.683 10648 Recovering log #3
+2023/01/16-07:02:16.728 10648 Reusing old log /home/glennin/Desktop/ai/.wwebjs_auth/session-client-one/Default/Sync Data/LevelDB/000003.log 
